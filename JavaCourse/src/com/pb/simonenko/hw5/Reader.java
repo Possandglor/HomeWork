@@ -28,7 +28,7 @@ public class Reader {
         System.out.print(FIO+" взял книги: ");
         for(int i = 0; i<books.length;i++)
         {
-            System.out.printf("%s (%s %dг)", books[i].name, books[i].author,books[i].year);
+            System.out.printf("%s (%s %dг)", books[i].getName(), books[i].getAuthor(),books[i].getYear());
             if(i!=books.length-1)
                 System.out.print(", ");
             else System.out.println();
@@ -56,7 +56,7 @@ public class Reader {
         System.out.print(FIO+" вернул книги: ");
         for(int i = 0; i<books.length;i++)
         {
-            System.out.printf("%s (%s %dг)", books[i].name, books[i].author,books[i].year);
+            System.out.printf("%s (%s %dг)", books[i].getName(), books[i].getAuthor(),books[i].getYear());
             if(i!=books.length-1)
                 System.out.print(", ");
             else System.out.println();

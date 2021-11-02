@@ -31,13 +31,13 @@ public class Library {
         System.out.println();
         System.out.println("takeBook:");
         readers[0].takeBook(5);
-        readers[1].takeBook(new String[] {books[0].name, books[1].name});
+        readers[1].takeBook(new String[] {books[0].getName(), books[1].getName()});
         readers[2].takeBook(new Book[] {books[0], books[1], books[2]});
 
         System.out.println();
         System.out.println("returnBook");
         readers[3].returnBook(5);
-        readers[4].returnBook(new String[] {books[2].name, books[1].name, books[0].name});
+        readers[4].returnBook(new String[] {books[2].getName(), books[1].getName(), books[0].getName()});
         readers[5].returnBook(new Book[] {books[2], books[1], books[0]});
     }
 }
