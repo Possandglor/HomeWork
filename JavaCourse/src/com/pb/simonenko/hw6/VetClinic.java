@@ -14,7 +14,7 @@ public class VetClinic {
             animals[i].Run();
             animals[i].eat();
 
-            animals[i].toString();
+            System.out.println(animals[i].toString());
         }
     }
 }
