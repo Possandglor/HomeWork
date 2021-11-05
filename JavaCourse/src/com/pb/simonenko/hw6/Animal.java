@@ -1,8 +1,8 @@
 package com.pb.simonenko.hw6;
 
 public class Animal {
-    protected int food=0;
-    protected int[] location={0,0};
+    public int food=0;
+    public int[] location={0,0};
 
 
     public void makeNoize()
