@@ -12,6 +12,5 @@ public class Skirt extends Clothes implements WomenClothes {
         this.color=color;
         this.cost = cost;
         this.size = size;
-
     }
 }
