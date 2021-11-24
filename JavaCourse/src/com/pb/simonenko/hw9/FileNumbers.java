@@ -25,7 +25,7 @@ public class FileNumbers {
         BufferedWriter writer = new BufferedWriter(new FileWriter(path));
         writer.append(numbers);
         System.out.println("Создан файл: "+Path.of(path).toAbsolutePath());
-        System.out.println("Записана строка: "+numbers.trim());
+        System.out.println("Записаны строки: "+numbers.trim());
         writer.close();
     }
 
@@ -34,7 +34,7 @@ public class FileNumbers {
     public static void createOddNumbersFile(String path,String oddpath) throws IOException {
         String numbers = Files.readString(Path.of(path)).trim();
         System.out.println("Считан файл: " + Path.of(path).toAbsolutePath());
-        System.out.println("Считана строка: " + numbers);
+        System.out.println("Считаны строки: " + numbers);
         String oddNumbers = "";
 
         for (String val1 : numbers.split("\\n"))
@@ -54,7 +54,7 @@ public class FileNumbers {
         BufferedWriter writer = new BufferedWriter(new FileWriter(oddpath));
         writer.append(oddNumbers.trim());
         System.out.println("Создан файл: "+Path.of(oddpath).toAbsolutePath());
-        System.out.println("Записана строка: "+oddNumbers);
+        System.out.println("Записаны строки: "+oddNumbers);
         writer.close();
     }
 
