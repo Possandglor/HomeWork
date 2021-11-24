@@ -16,10 +16,14 @@ public class FileNumbers {
         if(!Files.exists(Path.of(path)))
             Files.createFile(Path.of(path));
         String numbers = "";
-        for(int i = 0; i<10;i++)
-            numbers += (1+(int)(Math.random()*99))+" ";
+        for(int i = 0; i<10;i++) {
+            for (int j = 0; j < 10; j++)
+                numbers += (1 + (int) (Math.random() * 99)) + " ";
+            numbers = numbers.trim();
+            numbers+="\n";
+        }
         BufferedWriter writer = new BufferedWriter(new FileWriter(path));
-        writer.append(numbers.trim());
+        writer.append(numbers);
         System.out.println("Создан файл: "+Path.of(path).toAbsolutePath());
         System.out.println("Записана строка: "+numbers.trim());
         writer.close();
@@ -29,17 +33,22 @@ public class FileNumbers {
 //        который входят все числа из "numbers.txt" только все четные заменены на 0.
     public static void createOddNumbersFile(String path,String oddpath) throws IOException {
         String numbers = Files.readString(Path.of(path)).trim();
-        System.out.println("Считан файл: "+Path.of(path).toAbsolutePath());
-        System.out.println("Считана строка: "+numbers);
+        System.out.println("Считан файл: " + Path.of(path).toAbsolutePath());
+        System.out.println("Считана строка: " + numbers);
         String oddNumbers = "";
 
+        for (String val1 : numbers.split("\\n"))
+        {
+            for (String val : val1.split(" ")) {
+                if (Integer.parseInt(val) % 2 == 0)
+                    oddNumbers += "0 ";
+                else oddNumbers += val + " ";
 
-        for (String val : numbers.split(" ")) {
-            if(Integer.parseInt(val)%2==0)
-                oddNumbers+="0 ";
-            else oddNumbers+=val+" ";
+            }
+            oddNumbers=oddNumbers.trim();
+            oddNumbers+='\n';
+    }
 
-        }
         oddNumbers = oddNumbers.trim();
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(oddpath));
